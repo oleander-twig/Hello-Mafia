@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service Game {
+    rpc JoinGame (Request) returns (Answer) {}
+    rpc LeaveGame (Request) returns (Answer) {}
+    rpc UpdatePlayers (Request) returns (stream Info) {}
+}
+
+message  Request {
+    string message = 1;
+  }
+
+message Answer {
+    string emptyMessage = 1;
+}
+
+message Info {
+    string message = 1;
+}
